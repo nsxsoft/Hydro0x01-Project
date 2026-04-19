@@ -35,6 +35,10 @@ jobs:
     - name: Install PlatformIO Core
       run: pip install -U platformio
       
+    - name: Prepare Configuration
+      working-directory: ./firmware
+      run: cp include/config.example.h include/config.h
+
     - name: Build Firmware
       working-directory: ./firmware
       run: pio run
